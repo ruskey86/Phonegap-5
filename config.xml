@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+xmlns:gap = "http://phonegap.com/ns/1.0"
+id        = "com.natescode.SurvivalToolKit"
+version   = "3.3.0">
+	<name>Survival ToolKit</name>
+	<description>A Survival toolkit that includes a Flashlight, Compass and GPS </description>
+	<author href="http://www.natescode.com" email="nate@natescode.com">Nates Code</author>  
+	<feature name="http://api.phonegap.com/1.0/device" />
+	<preference name="phonegap-version" 		value="3.3.0" />
+	<preference name="orientation"      		value="default" />
+	<preference name="target-device"    		value="universal" />
+	<preference name="fullscreen"       		value="true" />
+	<preference name="exit-on-suspend" 			value="true" />
+	<preference name="android-installLocation" 	value="preferExternal" />
+	
+	<icon src="images/micrometer.png" />
+	<gap:splash src="splash.png" />
+
+
+<gap:plugin name="nl.x-services.plugins.flashlight" version="1.4" />
+<gap:plugin name="nl.x-services.plugins.toast" version="1.0" />
+
+
+<!-- all of the different icon sizes -->
+<icon src="icon/ldpi.png"   gap:platform="android"    gap:density="ldpi" />
+<icon src="icon/mdpi.png"   gap:platform="android"    gap:density="mdpi" />
+<icon src="icon/hdpi.png"   gap:platform="android"    gap:density="hdpi" />
+<icon src="icon/xhdpi.png"  gap:platform="android"    gap:density="xhdpi" />
+<!--<icon src="icon/qhdpi.png"  gap:platform="android"    gap:density="qhdpi" />-->
+
+</widget>

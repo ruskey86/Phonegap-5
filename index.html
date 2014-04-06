@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Page Title</title>
+		<!-- Phonegap JS file -->
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<!-- Jquery Libraries -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+		<!-- My personal resources -->
+		<!-- Cascading Style Sheets-->
+		<link rel="stylesheet" href="css/style.css">
+		<!-- Javascript -->
+		<script src="js/myjavascript.js"></script>
+		<script src="js/Flashlight.js"></script>
+		<script src="js/btnMenu.js"></script>
+		<script src="js/my.js"></script>
+	</head>
+	<!--<body onload="onLoad()">-->
+	<body onload="init()">
+		<!-- Start of first page I -->
+		<div data-role="page" id="page1">
+			<div data-role="header">
+				<h1>Survival Toolkit</h1>
+				<a href="#help" data-icon="gear" class="ui-btn-right" data-transition="slide">Help</a>
+			</div>
+			<!-- /header -->
+			<div data-role="content">
+				<ul data-role="listview">
+					<li>
+						<a href="#flashlight" data-transition="slide" class="menu">Flashlight</a>
+					</li>
+					<li>
+						<a href="#compass" data-transition="slide" class="menu">Compass</a>
+					</li>
+					<li>
+						<a href="#gps" data-transition="slide" class="menu">GPS</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /content -->
+			<div data-role="footer">
+				<h4>&copy; 2014 Nate</h4>
+			</div>
+			<!-- /footer -->
+			<div id="menu">
+				<a href="#about" data-role="button">About</a>
+				<a href="#help" data-role="button">Help</a>
+			</div>
+		</div>
+		<!-- /page -->
+		<!-- Start of HELP page-->
+		<div data-role="page" id="flashlight">
+			<div data-role="header">
+				<a href="#page1" class="ui-btn-left" data-transition="slide" data-direction="reverse"  data-icon="home">Home</a>
+				<h1>Flashlight</h1>
+			</div>
+			<!-- /header -->
+			<div data-role="content">
+				<button id="btnFlashlightOn" onclick="flashlightOn();">
+					ON
+				</button>
+				<button id="btnFlashlightOff" onclick="flashlightToggle();">
+					Toggle
+				</button>
+			</div>
+			<!-- /content -->
+			<div data-role="footer">
+				<h4>&copy; 2012 Nate</h4>
+			</div>
+			<!-- /footer -->
+		</div>
+		</div>
+		<!-- /page -->
+		<!-- START OF TOOLBOX PAGE -->
+		<div data-role="page" id="compass">
+			<div data-theme="a" data-role="header">
+				<a href="#page1" class="ui-btn-left" data-transition="slide" data-direction="reverse"  data-icon="home">Home</a>
+				<h3>Compass</h3>
+			</div>
+			<div data-role="content">
+				<div style="text-align:center">
+					<h1>Compass</h1>
+				</div>
+			</div>
+		</div>
+		<!-- END OF PAGE -->
+		<!-- START OF TOOLBOX PAGE -->
+		<div data-role="page" id="gps">
+			<div data-theme="a" data-role="header">
+				<a href="#page1" class="ui-btn-left" data-transition="slide" data-direction="reverse"  data-icon="home">Home</a>
+				<h3>GPS</h3>
+			</div>
+			<div data-role="content">
+				<div style="text-align:center">
+					<h1>GPS</h1>
+				</div>
+			</div>
+		</div>
+		<!-- END OF PAGE -->
+		<script>
+			function flashlightToggle()
+			{
+				window.plugins.flashlight.toggle(flashlightSuccess, flashlightfail, false);
+			}
+			function flashlightSuccess()
+			{
+				console.log("Let there be LIGHT!");
+			}
+			function flashlightfail()
+			{
+				console.log("Into the Darkness treadeth we");
+			}
+		</script>
+	</body>
+</html>
