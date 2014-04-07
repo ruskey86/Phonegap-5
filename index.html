@@ -14,13 +14,10 @@
 		<!-- Cascading Style Sheets-->
 		<link rel="stylesheet" href="css/style.css">
 		<!-- Javascript -->
-		<script src="js/myjavascript.js"></script>
 		<script src="js/Flashlight.js"></script>
-		<script src="js/btnMenu.js"></script>
-		<script src="js/my.js"></script>
+		<script src="js/script.js"></script>
 	</head>
-	<!--<body onload="onLoad()">-->
-	<body onload="init()">
+	<body>
 		<!-- Start of first page I -->
 		<div data-role="page" id="page1">
 			<div data-role="header">
@@ -45,11 +42,6 @@
 			<div data-role="footer">
 				<h4>&copy; 2014 Nate</h4>
 			</div>
-			<!-- /footer -->
-			<div id="menu">
-				<a href="#about" data-role="button">About</a>
-				<a href="#help" data-role="button">Help</a>
-			</div>
 		</div>
 		<!-- /page -->
 		<!-- Start of HELP page-->
@@ -60,9 +52,6 @@
 			</div>
 			<!-- /header -->
 			<div data-role="content">
-				<button id="btnFlashlightOn" onclick="flashlightOn();">
-					ON
-				</button>
 				<button id="btnFlashlightOff" onclick="flashlightToggle();">
 					Toggle
 				</button>
