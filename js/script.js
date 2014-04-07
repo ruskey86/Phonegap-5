@@ -1,50 +1,14 @@
-// Put your custom code here
-window.onload = function(){
-	var flashlightstate = false;
-};
-
 function flashlightToggle()
 {
-	if (flashlightstate)
-	{
-		window.plugins.flashlight.switchOn(flashlightOn, error("Flashlight failed to turn on"), false);
-		window.plugins.toast.show('Flashlight On', 'short', 'center');
-		flashlightstate = false;
-	}
-	else
-	{
-		window.plugins.flashlight.switchOff(flashlightOff, error("Flashlight failed to turn off"), false);
-		window.plugins.toast.show('Flashlight Off','short','center');
-		flashlightstate = true;
-	}
-
+		//window.plugins.flashlight.switchOn(success,fail,false);
+		window.plugins.flashlight.toggle(success,fail,false);
+		window.plugins.toast.show('flashlight toggled','short','center',false);	
 }
-
-function flashlightOn()
+function success()
 {
-	console.log("Flashlight on");
-	window.plugins.toast.show("Flashlight on");
+	console.log("Success");
 }
-
-function flashlightOff()
+function fail()
 {
-	console.log("Flashlight off");
-	window.plugins.toast.show("Flashlight off");
-}
-
-function error(message)
-{
-	console.log(message);
-	window.plugins.toast.show(message, 'long', 'center');
-}
-
-document.addEventListener("backbutton", function()
-{
-	// pass exitApp as callbacks to the switchOff method
-	window.plugins.flashlight.switchOff(exitApp, exitApp);
-}, false);
-
-function exitApp()
-{
-	navigator.app.exitApp();
+	console.log("Fail");
 }
